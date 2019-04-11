@@ -5,23 +5,30 @@
 */
 
 // Custom Fields
-$prelaunch_price    = get_post_meta( 15, 'prelaunch_price', true);
-$launch_price       = get_post_meta( 15, 'launch_price', true);
-$final_price        = get_post_meta( 15, 'final_price', true);
-$course_url         = get_post_meta( 15, 'course_url', true );
-$course_url         = get_post_meta( 15, 'course_url', true );
-$button_text        = get_post_meta( 15, 'button_text', true);
-$optin_text         = get_post_meta( 15, 'optin_text', true);
-$optin_button_text  = get_post_meta( 15, 'optin_button_text', true);
+$prelaunch_price        = get_post_meta( 15, 'prelaunch_price', true);
+$launch_price           = get_post_meta( 15, 'launch_price', true);
+$final_price            = get_post_meta( 15, 'final_price', true);
+$course_url             = get_post_meta( 15, 'course_url', true );
+$course_url             = get_post_meta( 15, 'course_url', true );
+$button_text            = get_post_meta( 15, 'button_text', true);
+$optin_text             = get_post_meta( 15, 'optin_text', true);
+$optin_button_text      = get_post_meta( 15, 'optin_button_text', true);
 
 //Advanced Custom Fields
+//BOOST YOUR INCOME SECTION
 $income_feature_image   = get_field('income_feature_image');
 $income_section_title   = get_field('income_section_title');
-$income_section_desc    =  get_field('income_section_description');
+$income_section_desc    = get_field('income_section_description');
 $reason_1_title         = get_field('reason_1_title');
 $reason_1_desc          = get_field('reason_1_desctiption');
 $reason_2_title         = get_field('reason_2_title');
 $reason_2_desc          = get_field('reason_2_desctiption');
+
+
+//BOOST YOUR INCOME SECTION
+$who_section_image      = get_field('who_section_image');
+$who_section_title      = get_field('who_section_title');
+$who_section_body      = get_field('who_section_body');
 
 get_header(); ?>
 
@@ -134,14 +141,21 @@ get_header(); ?>
 		<div class="container">
 			
 			<div class="section-header">
-				<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pad.png" alt="Pad and pencil">
-				<h2>Who Should Take This Course?</h2>
+				<!-- <img src="<?php /*bloginfo('stylesheet_directory'); */?>/assets/img/icon-pad.png" alt="Pad and pencil"> -->
+
+                                <!-- If user uploaded an image -->
+                <?php if( !empty($who_section_image)) : ?>
+                    <img src="<?php echo $who_section_image['url']; ?>" alt="<?php echo $who_section_image['alt']; ?>">
+                <?php endif; ?>
+
+
+                <!-- <h2>Who Should Take This Course?</h2> -->
+                <h2><?php echo $who_section_title;  ?></h2>
 			</div><!-- section-header -->
 			
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2">
-				
-					<h3>Graphic &amp; Web Designers</h3>
+<!-- 				<h3>Graphic &amp; Web Designers</h3>
 					<p>Graphic designers are extremely talented, but ask them to code their designs and they'll freeze up! This leaves them with no other choice but to hire a web developer. Any professional graphic designers knows web developers can be expensive.</p>
 					<p>If you&rsquo;re a designer, learning to code your own WordPress websites can change your business entirely! Now, not only are you a great designer, but you're a skillful developer, too! This puts you in a position to <strong>make an extra $1,000 - $5,000 per project.</strong></p>
 
@@ -158,8 +172,9 @@ get_header(); ?>
 
 					<h3>People Looking for a New Career</h3>
 					<p>Are you out of work? Looking for a more rewarding job? Desire a career that can allow you to work almost anywhere in the world? Becoming a Web Developer might be the answer for you.</p>
-					<p><strong>Web developers are paid well, anywhere from $33,000 to more than $105,000 per year.</strong> They get to work at amazing companies that are changing the world, or they enjoy the ability to start their own companies, become location-independent and work from home, from coffee shops, in an airplane, on the beach, or wherever they want!</p>
-					
+					<p><strong>Web developers are paid well, anywhere from $33,000 to more than $105,000 per year.</strong> They get to work at amazing companies that are changing the world, or they enjoy the ability to start their own companies, become location-independent and work from home, from coffee shops, in an airplane, on the beach, or wherever they want!</p> -->
+					<?php echo $who_section_body; ?>
+
 				</div><!-- end col -->
 			</div><!-- row -->
 
